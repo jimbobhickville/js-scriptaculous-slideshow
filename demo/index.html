@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Slideshow Demo</title>
+  <link rel="stylesheet" href="demo.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js"></script>
+  <script src="../lib/slideshow.js"></script>
+</head>
+<body>
+
+<div id="slideshow"></div>
+<div>All pictures &copy; Rachel Amanda Hill Photography - used with permission</div>
+
+<script type="text/javascript">
+	var defaults = { randomize: false, delay: 5 };
+	var buildSlideShow = function (options) {
+		Object.extend(options || {}, defaults);
+		$('slideshow').innerHTML = '';
+	    return new Slideshow.Local('slideshow', [
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/engagements066copy.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/wedding170copy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/bridals021copy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/Jason031siz1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/bridals175copy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/aynsley2lomo2siz1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/snowtree4lomosized.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/wedding078copy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/cindyfields1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/wedding335copy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/stephanie20filtercopy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/wedding138copy1.JPG" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/Jason48siz1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/1/0/Jessieglowcopy.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/beach111lomo.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/TEMPLEeffect3sized.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/engagements160copy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/bridals139copy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/bridals137copy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/Kristensized1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/bridals256copy.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/blossoms27bestsiz1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/1/0/Kristenglowcopy.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/steph014lomocopy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/steph1621.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/Jason0261.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/steph205lomocopy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/1/0/memoriesofflowerscopy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/luckiesbaptism096lomo.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/cindywheat3s1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/steph141bwcopy1.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/worsleys032siz2.jpg" /></div>',
+			'<div><img src="http://www.rachelamandahill.com/uploads/images/albums/0/luckiesbaptism128lomocopy.jpg" /></div>',
+		], options);
+	};
+	var slideShow = buildSlideShow();
+</script>
+
+<select onchange="slideShow = buildSlideShow({ effectPair: this.value })">
+	<option value="appear">Cross-Fade</option>
+	<option value="grow">Grow+Shrink</option>
+	<option value="blind">Blinds</option>
+	<option value="slide">Slide In/Out</option>
+	<option value="random">Randomize</option>
+</select>
+
+<button onclick="slideShow.play();">Play</button>
+<button onclick="slideShow.pause();">Pause</button>
+<button onclick="slideShow.goBack();"><< Prev</button>
+<button onclick="slideShow.goForward();">Next >></button>
+</body>
+</html>
