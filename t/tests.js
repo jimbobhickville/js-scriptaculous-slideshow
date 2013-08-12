@@ -21,9 +21,9 @@ test("Local Slideshow", 34, function () {
   var slideShow = new Slideshow.Local('qunit-fixture', frames, {
     hideEffect: Element.hide,
     showEffect: Element.show,
-    delay: 30,
-    repeat: false,
-    randomize: false
+    delay:      30,
+    repeat:     false,
+    randomize:  false
   });
   slideShow.pause();
 
